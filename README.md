@@ -26,7 +26,7 @@ Install Optional (Apps I use personally)
 ``` bash
 yay -S networkmanager network-manager-applet nm-connection-editor android-tools kdeconnect \
 oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gparted flameshot alacritty \
-sbctl 
+sbctl gammastep 
 ```
 
 **NOTE:** If you are not using a specific program in the optional list, you would have to edit few lines starting with ```exec-once```  by adding a # at the start of the line to comment them out.
