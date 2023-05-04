@@ -20,19 +20,21 @@ Install the dependancy packages
 yay -S wayland wayland-protocols hyprland base-devel xdg-desktop-portal-hyprland-git waybar-hyprland \
 rofi-lbonn-wayland-git hyprpaper hyprpicker-git swaylock-effects-git noto-fonts-emoji neofetch mpd \
 wlogout wl-clipboard ttf-jetbrains-mono-nerd ttf-liberation ttf-nerd-fonts-symbols-common \
-ttf-iosevka-nerd ttf-fantasque-nerd ttf-comfortaa sddm-git qt5ct pulseaudio pamixer noto-fonts
+ttf-iosevka-nerd ttf-fantasque-nerd ttf-comfortaa sddm-git qt5ct pipewire pipewire-pulse pamixer noto-fonts
 ```
 Install Optional (Apps I use personally)
 ``` bash
 yay -S networkmanager network-manager-applet nm-connection-editor android-tools kdeconnect \
-oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gparted flameshot alacritty \
-sbctl gammastep copyq 
+oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gparted grimshot alacritty \
+sbctl gammastep copyq webcord
 ```
 
 **NOTE:** If you are not using a specific program in the optional list, you would have to edit few lines starting with ```exec-once```  by adding a # at the start of the line to comment them out.
 
 ## Updates
 I plan to update the dotfiles whenever I make a change with my system. Features and suggestion are welcome. Have fun modding to your likes.
+
+Currently, I have migrated from pulseaudio to pipewire. Also, screen recording in discord (WebCord) is working fine.
 
 In case of any issues with hyprland, make sure to check out the Hyprland wiki before asking anywhere: https://wiki.hyprland.org/
 
