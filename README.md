@@ -5,7 +5,10 @@
 ``` I AM NOT RESPONSIBLE FOR YOUR BRICKED DEVICE OR MISCONFIGURED CONFIGS. IF U WANT TO INSTALL THESE CONFIGS, DO AT YOUR OWN RISK.```
 
 ## Introduction
-This repository is where I store my configs for archlinux on my daily driver. Technically, you could use this in any distribution as long as you the correct versions of packages. My current setup is using Wayland as display server. Hyprland as my wayland compositor alongside rofi, swaylock-effects, wlogout and waybar. I will update the configs as time passes. 
+This repository is where I store my configs for archlinux on my daily driver. Technically, you could use this in any distribution as long as you the correct versions of packages. My current setup is using Wayland as display server. Hyprland as my wayland compositor alongside rofi, swaylock-effects, wlogout and waybar. I will update the configs as time passes.
+
+![config](https://user-images.githubusercontent.com/45141270/236172624-aff62f68-9ab1-4d6f-bdf1-9fb3dfe406e6.png)
+
 
 ## Installation
 Get Yay (AUR package helper)
