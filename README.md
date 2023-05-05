@@ -13,6 +13,7 @@ This repository is where I store my configs for archlinux on my daily driver. Te
 ## Installation
 Get Yay (AUR package helper)
 ``` bash
+sudo pacman -S base-devel git go
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -20,10 +21,10 @@ makepkg -si
 
 Install the dependancy packages
 ``` bash
-yay -S wayland wayland-protocols hyprland base-devel xdg-desktop-portal-hyprland-git waybar-hyprland \
+yay -S wayland wayland-protocols hyprland xdg-desktop-portal-hyprland-git waybar-hyprland \
 rofi-lbonn-wayland-git hyprpaper hyprpicker-git swaylock-effects-git noto-fonts-emoji neofetch mpd \
 wlogout wl-clipboard ttf-jetbrains-mono-nerd ttf-liberation ttf-nerd-fonts-symbols-common \
-ttf-iosevka-nerd ttf-fantasque-nerd ttf-comfortaa sddm-git qt5ct pipewire pipewire-pulse pamixer noto-fonts
+ttf-iosevka-nerd ttf-fantasque-nerd ttf-comfortaa sddm-git qt5ct pipewire pipewire-pulse wireplumber noto-fonts
 ```
 Install Optional (Apps I use personally)
 ``` bash
