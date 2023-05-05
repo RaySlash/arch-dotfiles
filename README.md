@@ -7,10 +7,21 @@
 ## Introduction
 This repository is where I store my configs for archlinux on my daily driver. Technically, you could use this in any distribution as long as you the correct versions of packages. My current setup is using Wayland as display server. Hyprland as my wayland compositor alongside rofi, swaylock-effects, wlogout and waybar. I will update the configs as time passes.
 
-![config](https://user-images.githubusercontent.com/45141270/236172624-aff62f68-9ab1-4d6f-bdf1-9fb3dfe406e6.png)
+![config](https://raw.githubusercontent.com/RaySlash/dotfiles/main/res/config.png)
 
 
 ## Installation
+
+### Using Script
+``` bash
+sudo pacman -S wget
+wget https://raw.githubusercontent.com/RaySlash/dotfiles/main/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+
+### Manual ( **RECOMMENDED** )
 Get Yay (AUR package helper)
 ``` bash
 sudo pacman -S base-devel git go
@@ -34,7 +45,18 @@ hid-tmff2-dkms oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gpa
 sbctl gammastep copyq webcord firefox
 ```
 
-**NOTE:** If you are not using a specific program in the optional list, you would have to edit few lines starting with ```exec-once```  by adding a # at the start of the line to comment them out.
+**NOTE:** If you are not using a specific program in the optional list, you would have to edit few lines starting with ```exec-once```  by adding a ```#``` at the start of the line to comment them out.
+
+Finally, copy everything from the repo to ```/home/$USER/.config/```
+``` bash
+git clone https://github.com/RaySlash/dotfiles
+cp -a dotfiles/config/* ~/.config/
+```
+For ```.vimrc``` and ```.zshrc```, Do the following:
+``` bash
+cp .vimrc ~/
+echo "source ~/.config/zshrc" >> ~/.zshrc && cp zshrc ~/.config/
+```
 
 ## Updates
 I plan to update the dotfiles whenever I make a change with my system. Features and suggestion are welcome. Have fun modding to your likes.
