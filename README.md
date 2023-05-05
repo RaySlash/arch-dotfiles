@@ -41,7 +41,7 @@ noto-fonts polkit-kde-agent qt5-wayland qt6-wayland
 Install Optional (Apps I use personally)
 ``` bash
 yay -S networkmanager network-manager-applet nm-connection-editor android-tools kdeconnect linux-headers \
-hid-tmff2-dkms oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gparted grimshot alacritty \
+oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gparted grimshot alacritty \
 sbctl gammastep copyq webcord firefox
 ```
 
