@@ -29,7 +29,6 @@ install() {
 	printf "[!] Installing the configs\n"
 	mkdir -p .config 
 	cp -a config/* ~/.config/
-	cp .vimrc ~/
 	echo "source ~/.config/zshrc" >> ~/.zshrc && cp zshrc ~/.config/
 }
 

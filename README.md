@@ -36,12 +36,12 @@ yay -S wayland wayland-protocols hyprland xdg-desktop-portal-hyprland-git waybar
 rofi-lbonn-wayland-git hyprpaper hyprpicker-git swaylock-effects-git noto-fonts-emoji neofetch mpd \
 wlogout wl-clipboard ttf-jetbrains-mono-nerd ttf-liberation ttf-nerd-fonts-symbols-common \
 ttf-iosevka-nerd ttf-fantasque-nerd ttf-comfortaa sddm-git qt5ct pipewire pipewire-pulse wireplumber \
-noto-fonts polkit-kde-agent qt5-wayland qt6-wayland
+noto-fonts polkit-kde-agent qt5-wayland qt6-wayland alacritty
 ```
 Install Optional (Apps I use personally)
 ``` bash
 yay -S networkmanager network-manager-applet nm-connection-editor android-tools kdeconnect linux-headers \
-oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gparted grimshot alacritty \
+oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gparted grimshot \
 sbctl gammastep copyq webcord firefox
 ```
 
@@ -52,9 +52,8 @@ Finally, copy everything from the repo to ```/home/$USER/.config/```
 git clone https://github.com/RaySlash/dotfiles
 cp -a dotfiles/config/* ~/.config/
 ```
-For ```.vimrc``` and ```.zshrc```, Do the following:
+For ```.zshrc```, Do the following:
 ``` bash
-cp .vimrc ~/
 echo "source ~/.config/zshrc" >> ~/.zshrc && cp zshrc ~/.config/
 ```
 
@@ -67,3 +66,4 @@ In case of any issues with hyprland, make sure to check out the Hyprland wiki be
 
 ## Credits
 https://github.com/ChrisTitusTech/hyprland-titus/
+https://github.com/ThePrimeagen/init.lua
