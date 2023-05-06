@@ -8,6 +8,7 @@
 This repository is where I store my configs for archlinux on my daily driver. Technically, you could use this in any distribution as long as you the correct versions of packages. My current setup is using Wayland as display server. Hyprland as my wayland compositor alongside rofi, swaylock-effects, wlogout and waybar. I will update the configs as time passes.
 
 ![config](https://raw.githubusercontent.com/RaySlash/dotfiles/main/res/config.png)
+![nvim](https://raw.githubusercontent.com/RaySlash/dotfiles/600d9112b12cea69a0f4adba00ce637ed197a88a/res/vim.png)
 
 
 ## Installation
