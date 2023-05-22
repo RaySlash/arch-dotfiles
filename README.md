@@ -68,3 +68,4 @@ In case of any issues with hyprland, make sure to check out the Hyprland wiki be
 ## Credits
 https://github.com/ChrisTitusTech/hyprland-titus/
 https://github.com/ThePrimeagen/init.lua
+https://github.com/puma0x61/hyprland-interactive-screenshot/
