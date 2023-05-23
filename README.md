@@ -55,7 +55,7 @@ cp -a dotfiles/config/* ~/.config/
 ```
 For ```.zshrc```, Do the following:
 ``` bash
-echo "source ~/.config/zshrc" >> ~/.zshrc && cp zshrc ~/.config/
+echo "source ~/.config/zshrc" >> ~/.zshrc && cp config/zshrc ~/.config/
 ```
 
 ## Updates
