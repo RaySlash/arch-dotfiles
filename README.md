@@ -42,8 +42,8 @@ noto-fonts polkit-kde-agent qt5-wayland qt6-wayland alacritty
 Install Optional (Apps I use personally)
 ``` bash
 yay -S networkmanager network-manager-applet nm-connection-editor android-tools kdeconnect linux-headers \
-oversteer pavucontrol lxappearance openrgb dolphin neovim zsh gparted grimshot \
-sbctl gammastep copyq webcord firefox
+oversteer pavucontrol lxappearance openrgb thunar neovim zsh gparted grimshot \
+sbctl efibootmgr gammastep copyq webcord firefox
 ```
 
 **NOTE:** If you are not using a specific program in the optional list, you would have to edit few lines starting with ```exec-once```  by adding a ```#``` at the start of the line to comment them out.
