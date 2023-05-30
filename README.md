@@ -2,18 +2,17 @@
 
 ### DISCLAIMER
 
-``` I AM NOT RESPONSIBLE FOR YOUR BRICKED DEVICE OR MISCONFIGURED CONFIGS. IF U WANT TO INSTALL THESE CONFIGS, DO AT YOUR OWN RISK.```
+``` I AM NOT RESPONSIBLE FOR YOUR MISCONFIGURED CONFIGS. IF U WANT TO INSTALL THESE CONFIGS, DO AT YOUR OWN RISK.```
 
 ## Introduction
 This repository is where I store my configs for archlinux on my daily driver. Technically, you could use this in any distribution as long as you the correct versions of packages. My current setup is using Wayland as display server. Hyprland as my wayland compositor alongside rofi, swaylock-effects, wlogout and waybar. I will update the configs as time passes.
 
-![config](https://raw.githubusercontent.com/RaySlash/dotfiles/main/res/config.png)
-![nvim](https://raw.githubusercontent.com/RaySlash/dotfiles/600d9112b12cea69a0f4adba00ce637ed197a88a/res/vim.png)
-
+![image](https://github.com/RaySlash/dotfiles/assets/45141270/7c1b3f05-753e-42b9-8994-6b7db3ad11be)
+![image](https://github.com/RaySlash/dotfiles/assets/45141270/6f777357-c407-4af1-a7cd-bda81217494a)
 
 ## Installation
 
-### Using Script
+### Using Script (NOT Up-To-Date)
 ``` bash
 sudo pacman -S wget
 wget https://raw.githubusercontent.com/RaySlash/dotfiles/main/install.sh
@@ -44,9 +43,11 @@ Install Optional (Apps I use personally)
 yay -S networkmanager network-manager-applet nm-connection-editor android-tools kdeconnect linux-headers \
 oversteer pavucontrol lxappearance openrgb thunar neovim zsh gparted grimshot \
 sbctl efibootmgr gammastep copyq webcord firefox
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-**NOTE:** If you are not using a specific program in the optional list, you would have to edit few lines starting with ```exec-once```  by adding a ```#``` at the start of the line to comment them out.
+**NOTE:** If you are not using a specific program in the optional list, you would have to edit few lines starting with ```exec-once```  by adding a ```#``` at the start of the line to comment them out in the ```~/.config/hypr/hyprland.conf```
 
 Finally, copy everything from the repo to ```/home/$USER/.config/```
 ``` bash
@@ -58,14 +59,41 @@ For ```.zshrc```, Do the following:
 echo "source ~/.config/zshrc" >> ~/.zshrc && cp config/zshrc ~/.config/
 ```
 
-## Updates
-I plan to update the dotfiles whenever I make a change with my system. Features and suggestion are welcome. Have fun modding to your likes.
+## Nvim
+Currently, I have included nvim configs in the repo. I am still getting my around nvim config for the best experience. I am listing the current used plugins (LazyVim as plugin manager):
+```lua
+{"catppuccin/nvim", name = "catppuccin"},
+{'nvim-lualine/lualine.nvim'},
+{'lukas-reineke/indent-blankline.nvim'},
+{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+{'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+{'nvim-treesitter/nvim-treesitter-textobjects', after = "nvim-treesitter", requires = "nvim-treesitter/nvim-treesitter"},
+{'numToStr/Comment.nvim'},
+{'nvim-tree/nvim-tree.lua', version = "*", dependencies = {'nvim-tree/nvim-web-devicons'}},
+{'nvim-telescope/telescope.nvim', tag = '0.1.1', dependencies = {'nvim-lua/plenary.nvim'}},
+{'nvim-telescope/telescope-fzf-native.nvim'},
+{'neovim/nvim-lspconfig'},
+{'lewis6991/gitsigns.nvim'},
+{'hrsh7th/nvim-cmp'},
+{'hrsh7th/cmp-buffer'},
+{'hrsh7th/cmp-path'},
+{'saadparwaiz1/cmp_luasnip'},
+{'hrsh7th/cmp-nvim-lsp'},
+{'L3MON4D3/LuaSnip'},
+{'rafamadriz/friendly-snippets'},
+{'elkowar/yuck.vim'},
+{'aurum77/live-server.nvim',
+```
 
-Currently, I have migrated from pulseaudio to pipewire. Also, screen recording in discord (WebCord) is working fine.
+## Updates
+The current theme colors went a rebase to catppuccin (catppuccin-mocha) colors. Config files now exist for alacritty, nvim etc. in addition to others.
+
+I plan to update the dotfiles whenever I make a change with my system. Features and suggestion are welcome. Have fun modding to your likes. Currently, I have migrated from pulseaudio to pipewire. Also, screen recording in discord (WebCord) is working fine.
 
 In case of any issues with hyprland, make sure to check out the Hyprland wiki before asking anywhere: https://wiki.hyprland.org/
 
 ## Credits
-https://github.com/ChrisTitusTech/hyprland-titus/
-https://github.com/ThePrimeagen/init.lua
-https://github.com/puma0x61/hyprland-interactive-screenshot/
+https://github.com/ChrisTitusTech/hyprland-titus/<br>
+https://github.com/ThePrimeagen/init.lua<br>
+https://github.com/puma0x61/hyprland-interactive-screenshot/<br>
+https://github.com/catppuccin/catppuccin<br>
