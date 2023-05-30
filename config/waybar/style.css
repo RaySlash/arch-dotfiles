@@ -48,9 +48,9 @@ tooltip {
 #workspaces,
 #tray {
     background: #1e1e2e;
-    padding: 0 .6rem;
+    padding: 0 1rem;
     margin: 0.5rem 0.5rem;
-    border-radius: 1rem;
+    border-radius: .8rem;
 }
 
 #tray {
@@ -63,8 +63,7 @@ tooltip {
 }
 
 #custom-updates {
-    margin: 0.5rem 0.2rem;
-    color: #f5c2e7;
+  	color: #1793d0;
 }
 
 #window {
@@ -73,7 +72,7 @@ tooltip {
 
 #clock {
     margin-left: 1.2rem;
-    color: #fab387;
+    color: #9232D8;
 }
 
 #pulseaudio {

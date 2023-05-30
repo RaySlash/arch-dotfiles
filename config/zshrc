@@ -3,10 +3,11 @@ export EDITOR="nvim"
 export ANDROID_HOME="/home/$USER/.android/android-sdk" # Android-Studio
 export CHROME_EXECUTABLE="/usr/bin/chromium"  # Android-Studio
 export PATH="/opt/flutter/bin:$PATH"  # Android-Studio
+export GLFW_IM_MODULE="ibus" # IME support for kitty
 
 # Aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="exa --icons"
-alias sshpi="ssh smj@192.168.1.120"
 alias vim="nvim"
+alias ssh="kitty +kitten ssh"

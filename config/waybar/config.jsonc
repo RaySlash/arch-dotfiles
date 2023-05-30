@@ -15,9 +15,9 @@
     "modules-right": [
         "tray",
         "custom/updates",
-    //    "custom/language",
-    //    "battery",
-    //    "backlight",
+    /*  "custom/language",
+        "battery",
+        "backlight", */
         "pulseaudio",
         "pulseaudio#microphone"
     ],
@@ -43,18 +43,18 @@
         }
     },
     "custom/updates": {
-        "format": "",
+        "format": "󰣇 ",
 	"interval" : 700,
-        "on-click": "alacritty -e yay -Syyu", // update system
+        "on-click": "alacritty -e neofetch $$ yay -Syyu", // update system
         "signal": 8
     },
-   //"custom/weather" : {
-   //    "tooltip" : true,
-   //    "format" : "{}",
-   //    "interval" : 30,
-   //    "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-   //    "return-type" : "json"
-   //},
+   /*"custom/weather" : {
+       "tooltip" : true,
+       "format" : "{}",
+       "interval" : 30,
+       "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
+       "return-type" : "json"
+   }, */
     "tray": {
         "icon-size": 13,
         "spacing": 10
@@ -63,26 +63,27 @@
         "format": "{: %I:%M %p   %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
-    //"backlight": {
-    //    "device": "intel_backlight",
-    //    "format": "{icon} {percent}%",
-    //    "format-icons": ["", "", ""],
-    //    "on-scroll-up": "brightnessctl set 1%+",
-    //    "on-scroll-down": "brightnessctl set 1%-",
-    //    "min-length": 6
-    //},
-    //"battery": {
-    //    "states": {
-    //        "good": 95,
-    //        "warning": 30,
-    //        "critical": 20
-    //    },
-    //    "format": "{icon} {capacity}%",
-    //    "format-charging": " {capacity}%",
-    //    "format-plugged": " {capacity}%",
-    //    "format-alt": "{time} {icon}",
-    //    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
-    //},
+    /*
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", ""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    }, */
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
