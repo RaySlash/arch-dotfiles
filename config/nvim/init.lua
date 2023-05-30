@@ -26,7 +26,7 @@ end
 
 lazy.path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 lazy.setup({
-	{'folke/tokyonight.nvim'},
+	{"catppuccin/nvim", name = "catppuccin"},
 	{'nvim-lualine/lualine.nvim'},
 	{'lukas-reineke/indent-blankline.nvim'},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
@@ -37,6 +37,7 @@ lazy.setup({
     {'nvim-telescope/telescope.nvim', tag = '0.1.1', dependencies = {'nvim-lua/plenary.nvim'}},
 	{'nvim-telescope/telescope-fzf-native.nvim'},
 	{'neovim/nvim-lspconfig'},
+	{'lewis6991/gitsigns.nvim'},
 	{'hrsh7th/nvim-cmp'},
 	{'hrsh7th/cmp-buffer'},
 	{'hrsh7th/cmp-path'},
@@ -44,6 +45,7 @@ lazy.setup({
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'L3MON4D3/LuaSnip'},
 	{'rafamadriz/friendly-snippets'},
+	{'elkowar/yuck.vim'},
 	{'aurum77/live-server.nvim',
 		run = function()
 			require"live_server.util".install()
@@ -53,8 +55,26 @@ lazy.setup({
 })
 
 -- ColorScheme
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    transparent_background = true,
+    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+    term_colors = true,
+    color_overrides = {},
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+    },
+})
 vim.opt.termguicolors = true
-vim.cmd [[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme catppuccin-mocha]]
 
 -- Commands
 vim.g.mapleader = ' '
@@ -81,7 +101,7 @@ vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 -- Start plugins and configs
 require('lualine').setup({
 	options = {
-		theme = 'tokyonight-night',
+		theme = 'catppuccin-mocha',
 		globalstatus = true,
 	},
 })
@@ -92,22 +112,24 @@ require('Comment').setup({})
 
 require("nvim-tree").setup({})
 
-require'lspconfig'.pyright.setup({})
+require('gitsigns').setup({})
 
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "html", "css", "javascript" },
-  sync_install = false,
-  auto_install = false,
-  highlight = {
-    enable = true,
-    -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-    disable = function(lang, buf)
-        local max_filesize = 100 * 1024 -- 100 KB
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        if ok and stats and stats.size > max_filesize then
-            return true
-        end
-    end,
-    additional_vim_regex_highlighting = false,
-  },
+require('lspconfig').pyright.setup({})
+
+require('nvim-treesitter.configs').setup {
+	ensure_installed = { "c", "rust", "lua", "vim", "vimdoc", "query", "html", "css", "javascript" },
+	sync_install = false,
+	auto_install = false,
+	highlight = {
+		enable = true,
+		-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+		disable = function(lang, buf)
+			local max_filesize = 100 * 1024 -- 100 KB
+			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+			if ok and stats and stats.size > max_filesize then
+				return true
+			end
+		end,
+		additional_vim_regex_highlighting = false,
+	},
 }

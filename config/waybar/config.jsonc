@@ -1,114 +1,69 @@
 {
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 0,
-    "modules-left": [
-        "clock",
-    //    "custom/weather",
-        "wlr/workspaces"
-    ],
-    "modules-center": ["hyprland/window"],
-    "modules-right": [
-        "tray",
-        "custom/updates",
-    /*  "custom/language",
-        "battery",
-        "backlight", */
-        "pulseaudio",
-        "pulseaudio#microphone"
-    ],
+	"layer": "top",
+	"position": "top",
+	"height": 30,
 
-    "hyprland/window": {
-        "format": "{}"
-    },
-    "wlr/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "on-click": "activate",
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
-        }
-    },
-    "custom/updates": {
-        "format": "󰣇 ",
-	"interval" : 700,
-        "on-click": "alacritty -e neofetch $$ yay -Syyu", // update system
-        "signal": 8
-    },
-   /*"custom/weather" : {
-       "tooltip" : true,
-       "format" : "{}",
-       "interval" : 30,
-       "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-       "return-type" : "json"
-   }, */
-    "tray": {
-        "icon-size": 13,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{: %I:%M %p   %d/%m}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    /*
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
-        "min-length": 6
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
-    }, */
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "tooltip": false,
-        "format-muted": " Muted",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
-    },
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05-",
-        "scroll-step": 5
-    }
+	"modules-left": ["wlr/workspaces"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["tray", "custom/storage", "pulseaudio", "pulseaudio#microphone", "clock"],
+	"hyprland/window": {
+		"format": "{}",
+		"max-length": 200,
+		"seperate-outputs": true
+	},
+	"wlr/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"on-click": "activate",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+		}
+	},
+	"clock": {
+		"format": "{:%a %d %b %I:%M %p}",
+		"tooltip": false
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"tooltip": false,
+		"format-muted": " Muted",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-",
+		"scroll-step": 5,
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		}
+	},
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": " Muted",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05+",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05-",
+		"scroll-step": 5
+	},
+	"custom/storage": {
+		"format": "{} ",
+		"format-alt": "{percentage}% ",
+		"format-alt-click": "click-right",
+		"return-type": "json",
+		"interval": 60,
+		"exec": "~/.config/waybar/modules/storage.sh"
+	},
+	"tray": {
+		"icon-size": 20
+	}
 }

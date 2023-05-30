@@ -1,89 +1,81 @@
+@import "mocha.css";
+
 * {
-    font-family: Cartograph CF Nerd Font, monospace;
-    font-weight: bold;
-    font-size: 14px;
+	border:        none;
+	border-radius: 0;
+	font-family:   FiraCode Nerd Font;
+	font-size:     14px;
+	box-shadow:  none;
+	text-shadow:   none;
+	transition-duration: 0s;
 }
 
-window#waybar {
-    background: rgba(18,19,25,0);
-    color: #cdd6f4;
+window {
+	color: @text;
+	background: rgba(30, 30, 46, 0.8);
 }
 
-tooltip {
-    background: #1e1e2e;
-    border-radius: 1rem;
-}
-
-#workspaces button {
-    padding: 0.3rem;
-    color: #313244;
-}
-
-#workspaces button.active {
-    color: #a6adc8;
-}
-
-#workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
-    border-radius: 1rem;
-}
-
-#workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 1rem;
-}
-
-#workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
-    border-radius: 1rem;
-}
-
-#custom-updates,
-#window,
-#clock,
-#pulseaudio,
-#workspaces,
-#tray {
-    background: #1e1e2e;
-    padding: 0 1rem;
-    margin: 0.5rem 0.5rem;
-    border-radius: .8rem;
-}
-
-#tray {
-    margin-left: 0;
+window#waybar.solo {
+	color: @text;
+	background: shade(@base, 0.9);
+	border: 2px solid alpha(@crust, 0.3);
 }
 
 #workspaces {
-    background: #1e1e2e;
-    margin: 0.5rem 0;
+	margin: 0 10px;
 }
 
-#custom-updates {
-  	color: #1793d0;
+#workspaces button {
+	padding: 0 8px;
+	border-radius: 10px;
+	color: @text;
 }
 
-#window {
-    margin: 0.5rem 6rem;
+#workspaces button.active {
+	color: @blue;
+	background-color: @surface0;
+}
+
+#workspaces button.visible {
+	color: @text;
+}
+
+#workspaces button.urgent {
+	color: @green;
+}
+
+#pulseaudio, #pulseaudio.microphone, #custom-storage {
+	min-width: 60px;
+}
+
+#custom-storage {
+	padding: 0 0.5rem;
+	color: @mauve;
+	background-color: shade(@mantle, 0.9);
+}
+
+#pulseaudio, #pulseaudio.microphone{
+	padding: 0 0.5rem;
+	color: @green;
+	background-color: shade(@base, 0.9);
+}
+
+#tray{
+	padding: 0 10px;
+	background-color: shade(@base, 0.9);
 }
 
 #clock {
-    margin-left: 1.2rem;
-    color: #9232D8;
+	color: @flamingo;
+	background-color: shade(@crust, 0.9);
+	padding:     0px 1rem;
+	min-width:  140px;
 }
 
-#pulseaudio {
-    margin-right: 0;
-    border-radius: 1rem 0 0 1rem;
-    color: #89b4fa;
+#custom-storage.warning {
+	color: @yellow;
 }
 
-#pulseaudio.microphone {
-    margin-left: 0;
-    margin-right: 1.2rem;
-    border-radius: 0 1rem 1rem 0 ;
-    color: #cba6f7;
+#custom-storage.critical {
+	color: @red;
 }
