@@ -42,7 +42,8 @@ Install Optional (Apps I use personally)
 ``` bash
 yay -S networkmanager network-manager-applet nm-connection-editor android-tools kdeconnect linux-headers \
 oversteer pavucontrol lxappearance openrgb thunar neovim zsh gparted grimshot \
-sbctl efibootmgr gammastep copyq webcord firefox
+sbctl efibootmgr gammastep copyq webcord firefox catppuccin-gtk-theme-mocha sddm-catppuccin-git \ 
+qt5-graphicaleffects qt5-svg qt5-quickcontrols2
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
