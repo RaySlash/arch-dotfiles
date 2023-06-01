@@ -24,7 +24,7 @@ chmod +x install.sh
 ### Manual ( **RECOMMENDED** )
 Get Yay (AUR package helper)
 ``` bash
-sudo pacman -S base-devel git go
+sudo pacman -S base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -39,7 +39,7 @@ ttf-iosevka-nerd ttf-fantasque-nerd ttf-comfortaa sddm-git qt5ct pipewire pipewi
 noto-fonts polkit-kde-agent qt5-wayland qt6-wayland alacritty catppuccin-gtk-theme-mocha sddm-catppuccin-git \ 
 qt5-graphicaleffects qt5-svg qt5-quickcontrols2
 ```
-Install Optional (Apps I use personally)
+Install Optional (Apps I use)
 ``` bash
 yay -S networkmanager network-manager-applet nm-connection-editor android-tools kdeconnect linux-headers \
 oversteer pavucontrol lxappearance openrgb thunar neovim zsh gparted grimshot \
