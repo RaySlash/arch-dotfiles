@@ -1,0 +1,24 @@
+# Custom Env Variables
+export EDITOR="nvim"
+export ANDROID_HOME="/home/$USER/.android/android-sdk" # Android-Studio
+export CHROME_EXECUTABLE="/usr/bin/chromium"  # Android-Studio
+export PATH="/opt/flutter/bin:$PATH"  # Android-Studio
+export GLFW_IM_MODULE="ibus" # IME support for kitty
+
+# Aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls="exa --icons"
+alias ll="exa --icons -la"
+alias vim="nvim"
+alias ssh="kitty +kitten ssh"
+alias gl="git log"
+alias gs="git status"
+alias gp="git push"
+
+# kitty spawn id
+if [[ $TERM == "xterm-kitty" ]]; then
+  echo "kitty window id: " $KITTY_WINDOW_ID
+else
+  :
+fi
