@@ -87,6 +87,18 @@ Currently, I have included nvim configs in the repo. I am still getting my aroun
 {'aurum77/live-server.nvim',
 ```
 
+## Firefox
+Firefox have been modified to be better with keyboard and use of vertical tab panel. This would also help us to group tabs. I am listing a few firefox plugins/extensions/themes below for better usability. Huge credits to https://github.com/Frai7ty/catppuccin-fox.
+```
+https://addons.mozilla.org/en-US/firefox/addon/darkreader/
+https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/
+https://addons.mozilla.org/en-US/firefox/addon/firefox-color/
+https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/
+https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/
+https://addons.mozilla.org/en-US/firefox/addon/sidebery/
+https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/
+```
+
 ## Updates
 The current theme colors went a rebase to catppuccin (catppuccin-mocha) colors. Config files now exist for alacritty, nvim etc. in addition to others. I plan to update the dotfiles whenever I make a change with my system. Features and suggestion are welcome. Have fun modding to your likes. Currently, I have migrated from pulseaudio to pipewire. Also, screen recording in discord (WebCord) is working fine.
 
