@@ -7,8 +7,9 @@
 ## Introduction
 This repository is where I store my configs for Arch-Linux on my daily driver. Technically, you could use this in any distribution as long as you the correct versions of packages. My current setup is using Wayland as display server. Hyprland as my wayland compositor alongside rofi, swaylock-effects, wlogout and waybar. I will update the configs as time passes.
 
-![image](https://github.com/RaySlash/dotfiles/assets/45141270/7c1b3f05-753e-42b9-8994-6b7db3ad11be)
-![image](https://github.com/RaySlash/dotfiles/assets/45141270/6f777357-c407-4af1-a7cd-bda81217494a)
+![desktop](https://github.com/RaySlash/dotfiles/assets/45141270/7c1b3f05-753e-42b9-8994-6b7db3ad11be)
+![neovim](https://github.com/RaySlash/dotfiles/assets/45141270/6f777357-c407-4af1-a7cd-bda81217494a)
+![firefox](https://github.com/RaySlash/dotfiles/assets/45141270/1cf69a14-2f63-49cd-a74f-cf83cadaa4dd)
 
 ## Installation
 
@@ -88,21 +89,32 @@ Currently, I have included nvim configs in the repo. I am still getting my aroun
 ```
 
 ## Firefox
-Firefox have been modified to be better with keyboard and use of vertical tab panel. This would also help us to group tabs. I am listing a few firefox plugins/extensions/themes below for better usability. Huge credits to https://github.com/Frai7ty/catppuccin-fox.
+Firefox have been modified to be better with keyboard and use of vertical tab panel. This would also help us to group tabs. I am listing a few firefox plugins/extensions/themes below for better usability.
+
+- **DarkReader**: https://addons.mozilla.org/en-US/firefox/addon/darkreader/
+- **Enhancer for Youtube**: https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/
+- **Return Youtube Dislike**: https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/
+- **Firefox-Color**: https://addons.mozilla.org/en-US/firefox/addon/firefox-color/
+- **Privacy Badger**: https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/
+- **Sideberry**: https://addons.mozilla.org/en-US/firefox/addon/sidebery/
+- **Vimium-FF**: https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/
+- **Catppuccin-Mocha Theme**: https://addons.mozilla.org/en-US/firefox/addon/catppuccin-mocha-lavender-git/
+
+### Usage
+To use the provided config, move the files to ```~/.mozilla/firefox/{profile}/chrome/``` where {profile} is the name of your current profile. You can find this out in ```about:profile``` in firefox.
+
+```bash
+cp -a config/firefox/* ~/.mozilla/firefox/{profile}/chrome/
 ```
-https://addons.mozilla.org/en-US/firefox/addon/darkreader/
-https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/
-https://addons.mozilla.org/en-US/firefox/addon/firefox-color/
-https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/
-https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/
-https://addons.mozilla.org/en-US/firefox/addon/sidebery/
-https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/
-```
+
+Restart firefox to see changes. You can copy the ```config/firefox/sideberry/sideberyy.css``` and paste it in the config of sideberry from the ```config:addons``` section for sideberry for side-panel theme. You can also load all the settings I have currently enabled by importing the JSON in ```config/firefox/sideberry/sideberry-data-*.json``` to sideberry preferences.
 
 ## Updates
-The current theme colors went a rebase to catppuccin (catppuccin-mocha) colors. Config files now exist for alacritty, nvim etc. in addition to others. I plan to update the dotfiles whenever I make a change with my system. Features and suggestion are welcome. Have fun modding to your likes. Currently, I have migrated from pulseaudio to pipewire. Also, screen recording in discord (WebCord) is working fine.
+The current theme colors went a rebase to catppuccin (catppuccin-mocha) colors. Config files now exist for alacritty, nvim etc. in addition to others. I plan to update the dotfiles whenever I make a change with my system. Currently, I have migrated from pulseaudio to pipewire. Also, screen recording in discord (WebCord) is working fine.
 
-In case of any issues with hyprland, make sure to check out the Hyprland wiki before asking anywhere: https://wiki.hyprland.org/
+> Features and suggestion are welcome. Have fun modding to your likes.
+
+> In case of any issues with hyprland, make sure to check out the Hyprland wiki before asking anywhere: https://wiki.hyprland.org/
 
 ## Credits
 https://github.com/ChrisTitusTech/hyprland-titus/<br>
@@ -110,3 +122,4 @@ https://github.com/ThePrimeagen/init.lua<br>
 https://github.com/puma0x61/hyprland-interactive-screenshot/<br>
 https://github.com/catppuccin/catppuccin<br>
 https://github.com/folke/lazy.nvim<br>
+https://github.com/Frai7ty/catppuccin-fox<br>
