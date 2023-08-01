@@ -4,7 +4,6 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Lazy Plugin manager
 local lazy = {}
-
 function lazy.install(path)
   if not vim.loop.fs_stat(path) then
     print('Installing lazy.nvim....')
@@ -36,13 +35,13 @@ lazy.setup({
 	{'nvim-tree/nvim-tree.lua', version = "*", dependencies = {'nvim-tree/nvim-web-devicons'}},
     {'nvim-telescope/telescope.nvim', tag = '0.1.1', dependencies = {'nvim-lua/plenary.nvim'}},
 	{'nvim-telescope/telescope-fzf-native.nvim'},
-	{'neovim/nvim-lspconfig'},
 	{'lewis6991/gitsigns.nvim'},
+	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/nvim-cmp'},
+	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/cmp-buffer'},
 	{'hrsh7th/cmp-path'},
 	{'saadparwaiz1/cmp_luasnip'},
-	{'hrsh7th/cmp-nvim-lsp'},
 	{'L3MON4D3/LuaSnip'},
 	{'rafamadriz/friendly-snippets'},
 	{'elkowar/yuck.vim'},
@@ -98,6 +97,49 @@ vim.keymap.set({'n', 'x'}, 'cv', '"+p')
 vim.keymap.set({'n', 'x'}, 'x', '_x')
 vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 
+-- lsp cmp configs
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
+local luasnip = require('luasnip')
+local cmp = require('cmp')
+cmp.setup {
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	mapping = cmp.mapping.preset.insert({
+		['<C-u>'] = cmp.mapping.scroll_docs(-4),
+		['<C-d>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<CR>'] = cmp.mapping.confirm {
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true,
+		},
+		['<Tab>'] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			else
+				fallback()
+			end
+		end, { 'i', 's' }),
+		['<S-Tab>'] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, { 'i', 's' }),
+	}),
+	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
+	}
+}
 -- Start plugins and configs
 require('lualine').setup({
 	options = {
