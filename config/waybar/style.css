@@ -21,6 +21,10 @@ window#waybar.solo {
 	border: 2px solid alpha(@crust, 0.3);
 }
 
+window#wayabr.hidded {
+	opacity: 0.0;
+}
+
 #workspaces {
 	margin: 0 10px;
 }
