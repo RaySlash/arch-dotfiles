@@ -21,7 +21,7 @@ window#waybar.solo {
 	border: 2px solid alpha(@crust, 0.3);
 }
 
-window#wayabr.hidded {
+window#waybar.hidded {
 	opacity: 0.0;
 }
 
